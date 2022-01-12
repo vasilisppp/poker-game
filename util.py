@@ -1,0 +1,13 @@
+def cardValue(rank:str):
+    if rank.isnumeric():
+        return int(rank)
+    elif rank=='T':
+        return 10
+    elif rank=='J':
+        return 11
+    elif rank=='Q':
+        return 12
+    elif rank=='K':
+        return 13
+    elif rank=='A':
+        return 14
