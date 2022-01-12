@@ -51,8 +51,14 @@ class hand():
         return len(set(colors))==1
 
     def straight(self):
-        if self._cardRanksSorted[0]-self._cardRanksSorted[-1]==4:
-            return self._cardRanksSorted[0]
+        if len(set(self._cardRanksSorted))==5:
+            if self._cardRanksSorted[0]-self._cardRanksSorted[-1]==4:
+                # Ace first straight
+                return self._cardRanksSorted[0] 
+            elif self._cardRanksSorted[0]==14 and self._cardRanksSorted[1]-self._cardRanksSorted[-1]==3:
+                return self._cardRanksSorted[1]
+            else:
+                return 0
         else:
             return 0
     

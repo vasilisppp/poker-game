@@ -16,6 +16,7 @@ class HandTest(unittest.TestCase):
     def testStraight(self):
         self.assertEquals(hand("AS JC QH KH TH").straight(),14)
         self.assertEquals(hand("9S JC QH KH TH").straight(),13)
+        self.assertEquals(hand("AS 2S 3S 4S 5C").straight(),5)
         self.assertEquals(hand("2S JC QH KH TH").straight(),0)
 
     def testFlush(self):
@@ -75,4 +76,3 @@ class DeckTest(unittest.TestCase):
         d1 = deck(False)
         h1 = d1.dealHand()
         self.assertEquals(h1.getCards(),['AC', 'AS', 'AD', 'AH', 'KC'])
-        
